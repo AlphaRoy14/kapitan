@@ -8,6 +8,7 @@ matrix:
 branches:
   only:
     - master
+    - testing
     - /v(\d+\.){2}\d+(-rc\.\d+)?/ # regex for tag branches e.g. v0.22.0-rc.1, v0.22.0 etc
 notifications:
   recipients:
