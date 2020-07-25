@@ -2,7 +2,7 @@ classes:
   - common
   - test-objects
 parameters:
-  my_plainref: password
+  my_plainref: ?{plain:my_plainref}
   host_port: 8080
   container_port: 80
   server_name: localhost
