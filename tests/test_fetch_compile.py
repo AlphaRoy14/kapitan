@@ -62,3 +62,29 @@ class TestJustOneFunc(unittest.TestCase):
         rmtree(temp)
         os.chdir("../../")
         reset_cache()
+
+    def test_mini_compile(self):
+        os.chdir(os.path.join(os.getcwd(), "tests", "test_remote_inventory", "environment_four"))
+        temp = tempfile.mkdtemp()
+        temp_inv = tempfile.mkdtemp()
+
+        copy_tree(".", temp)
+        sys.argv = [
+            "kapitan",
+            "compile",
+            "--fetch",
+            "--search-path",
+            temp,
+            "--output-path",
+            temp,
+            "--inventory-path",
+            os.path.join(temp, "inventory"),
+            "-t",
+            "nginx",
+        ]
+        main()
+        self.assertTrue(os.path.exists(os.path.join(temp, "compiled", "nginx")))
+        os.chdir("../../..")
+        reset_cache()
+        rmtree(temp)
+        rmtree(temp_inv)
