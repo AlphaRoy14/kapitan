@@ -137,10 +137,10 @@ class RemoteInventoryTest(unittest.TestCase):
         runs $ kapitan compile --fetch --search-paths temp_dir --output-path temp_dir --inventory-path temp_dir/inventory -t nginx
         The `test-objects` class of target `nginx` does not exist initially, it is fetched and then compiled
         """
-        os.chdir(os.path.join(os.getcwd(),"..", "environment_three"))
+        os.chdir(os.path.join(os.getcwd(), "..", "environment_three"))
         temp_dir = tempfile.mkdtemp()
 
-        copy_tree(".", temp_dir) # copying the test environment to search path
+        copy_tree(".", temp_dir)  # copying the test environment to search path
         sys.argv = [
             "kapitan",
             "compile",
