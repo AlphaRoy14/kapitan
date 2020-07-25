@@ -6,10 +6,10 @@ from kapitan.cli import main
 from shutil import rmtree
 from distutils.dir_util import copy_tree
 from kapitan.cached import reset_cache
+import time
 
 
 class TestJustOneFunc(unittest.TestCase):
-
     def test_compile_fetch_classes_that_doesnot_exist_yet(self):
         """
         runs $ kapitan compile --fetch --search-paths temp_dir --output-path temp_dir --inventory-path temp_dir/inventory -t monitoring-dev
@@ -33,6 +33,7 @@ class TestJustOneFunc(unittest.TestCase):
             "-t",
             "monitoring-dev",
         ]
+        time.sleep(30)
         main()
         self.assertTrue(os.path.isdir(os.path.join(temp_dir, "charts", "prometheus")))
         rmtree(temp_dir)
