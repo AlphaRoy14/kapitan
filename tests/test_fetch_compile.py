@@ -60,3 +60,5 @@ class TestJustOneFunc(unittest.TestCase):
         self.assertTrue(os.path.isdir(os.path.join(temp, "components", "source")))
         # self.assertTrue(os.path.isdir(os.path.join(temp, "charts", "prometheus")))
         rmtree(temp)
+        os.chdir("../../")
+        reset_cache()
