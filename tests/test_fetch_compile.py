@@ -51,12 +51,12 @@ class TestJustOneFunc(unittest.TestCase):
             "-t",
             "nginx",
             "nginx-dev",
-            "monitoring-dev",
+            # "monitoring-dev",
         ]
         main()
         self.assertTrue(os.path.isdir(os.path.join(temp, "components", "tests")))
         self.assertTrue(os.path.isdir(os.path.join(temp, "components", "acs-engine-autoscaler")))
         self.assertTrue(os.path.isdir(os.path.join(temp, "components", "kapitan-repository")))
         self.assertTrue(os.path.isdir(os.path.join(temp, "components", "source")))
-        self.assertTrue(os.path.isdir(os.path.join(temp, "charts", "prometheus")))
+        # self.assertTrue(os.path.isdir(os.path.join(temp, "charts", "prometheus")))
         rmtree(temp)
