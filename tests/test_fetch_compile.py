@@ -33,7 +33,6 @@ class TestJustOneFunc(unittest.TestCase):
             "-t",
             "monitoring-dev",
         ]
-        time.sleep(30)
         main()
         self.assertTrue(os.path.isdir(os.path.join(temp_dir, "charts", "prometheus")))
         rmtree(temp_dir)
