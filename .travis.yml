@@ -13,8 +13,9 @@ jobs:
     script:  # no tests
       - go version
       - python3 --version
+      - export OBJC_DISABLE_INITIALIZE_FORK_SAFETY=YES
       - make build_helm_binding && make build_helm_fetch_binding
-      - python3 -m unittest tests.test_dependency_manager
+      - python3 -m unittest tests.test_dependency_manager.DependencyManagerTest
       - python3 -m unittest tests.test_helm_input.HelmInputTest.test_compile_subcharts
       - python3 -m unittest tests.test_helm_input.HelmInputTest.test_compile_with_helm_params
       - python3 -m unittest tests.test_helm_input.HelmInputTest.test_compile_with_helm_values
