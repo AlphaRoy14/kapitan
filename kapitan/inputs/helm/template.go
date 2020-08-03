@@ -13,6 +13,7 @@ import (
 	"strings"
 	"text/template"
 	"unsafe"
+	"runtime"
 
 	"github.com/Masterminds/sprig"
 	"github.com/ghodss/yaml"
@@ -25,7 +26,7 @@ import (
 )
 
 const defaultDirectoryPermission_c = 0755
-
+func init() { runtime.LockOSThread() }
 var (
 	whitespaceRegex_c = regexp.MustCompile(`^\s*$`)
 	// defaultKubeVersion is the default value of --kube-version flag
