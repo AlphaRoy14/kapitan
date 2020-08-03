@@ -13,6 +13,7 @@ import (
 	"strings"
 	"text/template"
 	"unsafe"
+	"runtime"
 
 	"github.com/Masterminds/sprig"
 	"github.com/ghodss/yaml"
@@ -24,6 +25,7 @@ import (
 	"k8s.io/helm/pkg/strvals"
 )
 
+func init() { runtime.LockOSThread() }
 const defaultDirectoryPermission_c = 0755
 
 var (

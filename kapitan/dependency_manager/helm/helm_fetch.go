@@ -7,11 +7,14 @@ import (
 	"os"
 	"path/filepath"
 	"strings"
+	"runtime"
 
 	"github.com/otiai10/copy"
 	"helm.sh/helm/v3/pkg/action"
 	"helm.sh/helm/v3/pkg/cli"
 )
+
+func init() { runtime.LockOSThread() }
 
 //export fetchHelmChart
 func fetchHelmChart(c_repoURL, c_chartName, c_chartVersion, c_destinationDir *C.char) *C.char {
