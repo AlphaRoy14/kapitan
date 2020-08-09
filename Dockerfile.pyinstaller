@@ -17,6 +17,7 @@ COPY ./kapitan ./kapitan
 COPY ./MANIFEST.in ./MANIFEST.in
 COPY ./requirements.txt ./requirements.txt
 COPY ./scripts/pyinstaller.sh ./pyinstaller.sh
+COPY ./scripts/hook-google.cloud.secretmanager.py ./hook-google.cloud.secretmanager.py
 COPY ./setup.py ./setup.py
 
 

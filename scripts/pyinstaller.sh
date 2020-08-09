@@ -17,7 +17,7 @@ pyi-makespec kapitan/"$entry".py --onefile \
     --hidden-import pyparsing --hidden-import jsonschema \
     --hidden-import 'pkg_resources.py2_warn' \
     --exclude-module doctest --exclude-module pydoc \
-    --additional-hooks-dir=./kapitan
+    --additional-hooks-dir=.
 pyinstaller "$entry".spec --clean
 mv dist/$entry dist/$output_name
 # Open permissions so that when this binary
