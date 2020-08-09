@@ -17,8 +17,6 @@ COPY ./kapitan ./kapitan
 COPY ./MANIFEST.in ./MANIFEST.in
 COPY ./requirements.txt ./requirements.txt
 COPY ./scripts/pyinstaller.sh ./pyinstaller.sh
-COPY ./scripts/hook-google.cloud.secretmanager.py ./hook-google.cloud.secretmanager.py
-COPY ./scripts/hook-gcloud.py ./hook-gcloud.py
 COPY ./setup.py ./setup.py
 
 
@@ -40,8 +38,6 @@ RUN apt-get update \
     && pip install --upgrade pip wheel \
     && pip install pyinstaller==$PYINSTALLER_VERSION \
     && pip install -r requirements.txt \
-    && pip install --upgrade google-cloud-core \
-    && pip install --upgrade google-cloud-secret-manager \
     && ./kapitan/inputs/helm/build.sh \
     && ./kapitan/dependency_manager/helm/build.sh \
     && chmod +x ./pyinstaller.sh
