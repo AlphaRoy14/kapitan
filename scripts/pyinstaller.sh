@@ -7,8 +7,7 @@ set -e
 
 entry='__main__'
 output_name='kapitan-linux-amd64'
-cat /opt/venv/lib/python3.7/site-packages/PyInstaller/hooks/hook-google.cloud.py
-mv hook-gcloud.py /opt/venv/lib/python3.7/site-packages/PyInstaller/hooks/
+echo "" > /opt/venv/lib/python3.7/site-packages/PyInstaller/hooks/hook-google.cloud.py
 pyi-makespec kapitan/"$entry".py --onefile \
     --add-data kapitan/reclass/reclass:reclass \
     --add-data kapitan/lib:kapitan/lib \
@@ -18,7 +17,6 @@ pyi-makespec kapitan/"$entry".py --onefile \
     --hidden-import pyparsing --hidden-import jsonschema \
     --hidden-import 'pkg_resources.py2_warn' \
     --exclude-module doctest --exclude-module pydoc \
-    --additional-hooks-dir=.
 pyinstaller "$entry".spec --clean
 mv dist/$entry dist/$output_name
 # Open permissions so that when this binary
