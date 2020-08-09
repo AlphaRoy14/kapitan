@@ -38,6 +38,7 @@ RUN apt-get update \
     && pip install --upgrade pip wheel \
     && pip install pyinstaller==$PYINSTALLER_VERSION \
     && pip install -r requirements.txt \
+    && pip install --upgrade google-cloud-core \
     && ./kapitan/inputs/helm/build.sh \
     && ./kapitan/dependency_manager/helm/build.sh \
     && chmod +x ./pyinstaller.sh
