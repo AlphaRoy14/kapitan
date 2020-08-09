@@ -3,7 +3,7 @@ import logging
 import os
 import base64
 from binascii import Error as b_error
-from google.cloud import secretmanager as gcloud
+import google.cloud.secretmanager as gcloud
 from kapitan.errors import KapitanError
 from kapitan import cached
 from kapitan.refs.base import RefError
