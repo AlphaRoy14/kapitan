@@ -7,7 +7,8 @@ set -e
 
 entry='__main__'
 output_name='kapitan-linux-amd64'
-echo "datas += copy_metadata('gcloud')" >> /opt/venv/lib/python3.7/site-packages/PyInstaller/hooks/hook-google.cloud.py
+cat /opt/venv/lib/python3.7/site-packages/PyInstaller/hooks/hook-google.cloud.py
+mv hook-gcloud.py /opt/venv/lib/python3.7/site-packages/PyInstaller/hooks/
 pyi-makespec kapitan/"$entry".py --onefile \
     --add-data kapitan/reclass/reclass:reclass \
     --add-data kapitan/lib:kapitan/lib \
