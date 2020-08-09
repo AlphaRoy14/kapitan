@@ -7,6 +7,7 @@ matrix:
     sudo: true
 branches:
   only:
+    - testing2
     - master
     - /v(\d+\.){2}\d+(-rc\.\d+)?/ # regex for tag branches e.g. v0.22.0-rc.1, v0.22.0 etc
 notifications:
