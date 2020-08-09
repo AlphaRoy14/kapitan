@@ -3,7 +3,7 @@ import logging
 import os
 import base64
 from binascii import Error as b_error
-from google.cloud import secretmanager
+from google.cloud import secretmanager as gcloud
 from kapitan.errors import KapitanError
 from kapitan import cached
 from kapitan.refs.base import RefError
@@ -19,7 +19,7 @@ class GoogleSMError(KapitanError):
 
 def gsm_obj():
     if not cached.gsm_obj:
-        gsm_client = secretmanager.SecretManagerServiceClient()
+        gsm_client = gcloud.SecretManagerServiceClient()
         cached.gsm_obj = gsm_client
     return cached.gsm_obj
 
