@@ -25,11 +25,12 @@ before_install:
   # - sudo apt-key adv --keyserver keyserver.ubuntu.com --recv-keys 762E3157
   # Loop until update succeeds (timeouts can occur)
   - travis_retry $(! sudo apt-get -qq update 2>&1 | grep Failed)
+  - pip3 install --upgrade pip
   # - sudo apt-get install -y gnupg2 git
   # - sudo apt-get install -y golang-1.14
-  - export PATH="/usr/lib/go-1.14/bin:$PATH"
-  - export GOROOT=/usr/lib/go-1.14
-  - go version
+  # - export PATH="/usr/lib/go-1.14/bin:$PATH"
+  # - export GOROOT=/usr/lib/go-1.14
+  # - go version
 
 install:
   - pip3 install -r requirements.txt
