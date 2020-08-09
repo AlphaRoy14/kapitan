@@ -8,7 +8,7 @@ set -e
 
 entry='__main__'
 output_name='kapitan-linux-amd64'
-rm /opt/venv/lib/python3.7/site-packages/PyInstaller/hooks/hook-google.cloud.py
+# rm /opt/venv/lib/python3.7/site-packages/PyInstaller/hooks/hook-google.cloud.py
 pyi-makespec kapitan/"$entry".py --onefile \
     --add-data kapitan/reclass/reclass:reclass \
     --add-data kapitan/lib:kapitan/lib \
