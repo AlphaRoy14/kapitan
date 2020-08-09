@@ -11,7 +11,7 @@ from kapitan.refs.base64 import Base64Ref
 from kapitan.refs.env import EnvRef
 from kapitan.refs.secrets.awskms import AWSKMSSecret
 from kapitan.refs.secrets.gkms import GoogleKMSSecret
-# from kapitan.refs.secrets.gsm import GoogleSMSecret
+from kapitan.refs.secrets.gsm import GoogleSMSecret
 from kapitan.refs.secrets.gpg import GPGSecret, lookup_fingerprints
 from kapitan.refs.secrets.vaultkv import VaultSecret
 from kapitan.resources import inventory_reclass

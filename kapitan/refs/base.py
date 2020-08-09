@@ -451,7 +451,7 @@ class RefController(object):
 
                 self.register_backend(VaultBackend(self.path, **ref_kwargs))
             elif type_name == "gsm":
-                # from kapitan.refs.secrets.gsm import GoogleSMBackend
+                from kapitan.refs.secrets.gsm import GoogleSMBackend
 
                 self.register_backend(GoogleSMBackend(self.path, **ref_kwargs))
             else:
