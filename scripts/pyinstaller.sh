@@ -7,6 +7,7 @@ set -e
 
 entry='__main__'
 output_name='kapitan-linux-amd64'
+pwd && ls
 pyi-makespec kapitan/"$entry".py --onefile \
     --add-data kapitan/reclass/reclass:reclass \
     --add-data kapitan/lib:kapitan/lib \
